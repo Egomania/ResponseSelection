@@ -22,16 +22,16 @@
 #
 
 import abc
+import logging
+import glpk.glpkpi as glpki
+import subprocess
+import time
+
 from solver.SolverBase import SolverBase
 
 from classes.Host import Host
 from classes.Metric import Metric
 from classes.Response import Response
-
-import logging
-import glpk.glpkpi as glpki
-import subprocess
-import time
 
 class Solver(SolverBase):
 

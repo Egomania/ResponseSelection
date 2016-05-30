@@ -9,17 +9,13 @@ import datetime
 import logging
 import gc
 import os
-
 import time
 
 import helper.helper_functions as helper
 
-try:
-    from classes.Metric import Metric
-    from classes.Host import Host
-    from classes.Response import Response
-except ImportError as e: 
-    logging.error("Could not import internal structure %s", str(e))
+from classes.Metric import Metric
+from classes.Host import Host
+from classes.Response import Response
 
 
 def scriptSolver(solver, solverConfig, elem, dumpSolution, solPath):
