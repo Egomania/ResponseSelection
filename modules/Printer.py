@@ -94,8 +94,11 @@ def printing(DB_SETTING,PRINTER_SETTING,newSettings):
             for key, value in StoredSettings.iteritems():
                 newSettings[key] = value
         except:
-            logging.warning("Given Printer file does not exist.")
+            logging.warning("Given Printer file %s does not exist.", PRINTER_SETTING.PrintFilePath)
 
+    if not bool(newSettings):
+        logging.info("Nothing to print.")
+        sys.exit(0)
 
     dataRowRaw = []
 

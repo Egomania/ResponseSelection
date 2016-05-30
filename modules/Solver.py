@@ -15,12 +15,11 @@ import time
 import helper.helper_functions as helper
 
 try:
-    from csr_opt.Optimizer import *
-    from csr_opt.Metric import Metric
-    from csr_opt.Host import Host
-    from csr_opt.Response import Response
+    from classes.Metric import Metric
+    from classes.Host import Host
+    from classes.Response import Response
 except ImportError as e: 
-    print "Could not import internal structure '" + str(e) + "'"
+    logging.error("Could not import internal structure %s", str(e))
 
 
 def scriptSolver(solver, solverConfig, elem, dumpSolution, solPath):
